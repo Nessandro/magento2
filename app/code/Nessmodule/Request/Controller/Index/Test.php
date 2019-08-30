@@ -1,7 +1,5 @@
 <?php
-
-namespace Nessdev\Helloworld\Controller\Index;
-
+namespace Nessmodule\Request\Controller\Index;
 
 class Test extends \Magento\Framework\App\Action\Action
 {
@@ -17,7 +15,8 @@ class Test extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
-        echo "Hello World";
-        exit;
+        $this->_forward('pagedemo');
     }
+
+
 }

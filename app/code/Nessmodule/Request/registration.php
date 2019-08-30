@@ -1,6 +1,6 @@
 <?php
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Imagine_Test_HelloWorld',
+    'Nessmodule_Request',
     __DIR__
 );
