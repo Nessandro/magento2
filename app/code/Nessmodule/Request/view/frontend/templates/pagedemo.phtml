@@ -1,0 +1,40 @@
+<main id="maincontent" class="page-main"><a id="contentarea" tabindex="-1"></a>
+    <div class="page-title-wrapper">
+        <h1 class="page-title">
+            <span class="base" data-ui-id="page-title-wrapper">Provide Your Identity</span></h1>
+    </div>
+    <div class="page messages">
+        <div data-placeholder="messages"></div>
+        <div data-bind="scope: 'messages'">
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column main">
+            <div id="authenticationPopup" data-bind="scope:'authenticationPopup'" style="display: none;">
+            </div>
+            <form class="form form-orders-search" id="oar-widget-orders-and-returns-form" action="" method="post"
+                  name="guest_post" novalidate="novalidate">
+                <fieldset class="fieldset">
+                    <legend class="legend"><span>Information</span></legend>
+                    <br>
+                    <div class="field lastname required">
+                        <label class="label" for="oar-billing-lastname"><span>Identity</span></label>
+
+                        <div class="control">
+                            <input type="text" class="input-text" id="oar-billing-lastname" name="oar_billing_lastname"
+                                   data-validate="{required:true}" aria-required="true">
+                        </div>
+                    </div>
+
+                </fieldset>
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <button type="submit" title="Continue" class="action submit primary">
+                            <span>Continue</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
