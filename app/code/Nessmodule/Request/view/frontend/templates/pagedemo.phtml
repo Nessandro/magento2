@@ -1,40 +1,36 @@
-<main id="maincontent" class="page-main"><a id="contentarea" tabindex="-1"></a>
-    <div class="page-title-wrapper">
-        <h1 class="page-title">
-            <span class="base" data-ui-id="page-title-wrapper">Provide Your Identity</span></h1>
-    </div>
-    <div class="page messages">
-        <div data-placeholder="messages"></div>
-        <div data-bind="scope: 'messages'">
-        </div>
-    </div>
-    <div class="columns">
-        <div class="column main">
-            <div id="authenticationPopup" data-bind="scope:'authenticationPopup'" style="display: none;">
-            </div>
-            <form class="form form-orders-search" id="oar-widget-orders-and-returns-form" action="" method="post"
-                  name="guest_post" novalidate="novalidate">
-                <fieldset class="fieldset">
-                    <legend class="legend"><span>Information</span></legend>
-                    <br>
-                    <div class="field lastname required">
-                        <label class="label" for="oar-billing-lastname"><span>Identity</span></label>
+<?php
 
-                        <div class="control">
-                            <input type="text" class="input-text" id="oar-billing-lastname" name="oar_billing_lastname"
-                                   data-validate="{required:true}" aria-required="true">
-                        </div>
-                    </div>
+/**
+ * @var \Nessmodule\Request\Block\Pagedemo $block
+ */
 
-                </fieldset>
-                <div class="actions-toolbar">
-                    <div class="primary">
-                        <button type="submit" title="Continue" class="action submit primary">
-                            <span>Continue</span>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</main>
+echo $block->showContent();
+?>
+
+<style>
+    table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
+    td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
+    tr:nth-child(even) { background-color: #dddddd; }
+    .post-id{width:2%} .post-name{width:30%}
+
+</style>
+
+<table>
+    <tr>
+        <th class="post-id">Id</th>
+        <th class="post-name">Request</th>
+    </tr>
+    <?php
+    foreach ($block->getRequestData() as $key=> $row){
+        echo '<tr>
+                    <td>'.$row->getData('id').'</td> 
+                    <td>'.$row->getMessage().'</td>
+                  </tr>';
+    }
+    ?>
+</table>
+
+</body>
+</html>
+
+

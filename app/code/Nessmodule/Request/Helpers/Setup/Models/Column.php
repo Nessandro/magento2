@@ -1,5 +1,5 @@
 <?php
-namespace Nessmodule\Request\Helpers\Models;
+namespace Nessmodule\Request\Helpers\Setup\Models;
 /**
  * Class Column
  * User: Nessandro
