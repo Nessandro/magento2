@@ -12,7 +12,7 @@ use \Nessmodule\Request\Helpers\Interfaces\SchemaConfiguration;
 use \Magento\Framework\Setup\InstallSchemaInterface;
 use \Magento\Framework\Setup\SchemaSetupInterface;
 use \Magento\Framework\Setup\ModuleContextInterface;
-use Nessmodule\Request\Helpers\Models\Column;
+use \Nessmodule\Request\Helpers\Setup\Models\Column;
 
 abstract class AbstractSchema implements InstallSchemaInterface, SchemaConfiguration
 {
@@ -131,9 +131,9 @@ abstract class AbstractSchema implements InstallSchemaInterface, SchemaConfigura
     public function requirements()
     {
         /**
-         * check if table name isset else return false
+         * check if table name is set else return false
          */
-        if($this->tableName)
+        if(!$this->getTableName())
         {
             return false;
         }
@@ -194,7 +194,6 @@ abstract class AbstractSchema implements InstallSchemaInterface, SchemaConfigura
         $connection->createTable($table);
 
         //todo add index tables
-
 //        $this->installer->getConnection()->addIndex(
 //
 //            $this->installer->getTable($this->getTableName()),
